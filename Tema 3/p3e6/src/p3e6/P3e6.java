@@ -52,7 +52,7 @@ public class P3e6 {
            if(dia>272 && dia<355)
                JOptionPane.showMessageDialog(null, "La fecha es Otoño");
            if(dia>356 && dia<=365)
-               JOptionPane.showMessageDialog(null, "La fecha es Primavera");
+               JOptionPane.showMessageDialog(null, "La fecha es Invierno");
            
            
            
