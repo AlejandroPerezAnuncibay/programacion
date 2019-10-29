@@ -21,7 +21,8 @@ public class P3e8 {
     public static void main(String[] args) {
         // TODO code application logic here
         String hacer = "";
-        boolean correcto;
+        boolean correcto = false;
+        do{
         try
         {
         hacer = JOptionPane.showInputDialog("¿Que deseas realizar?"
@@ -30,6 +31,17 @@ public class P3e8 {
                 +"\nc.- Vocales en una cadena de caracteres" 
                 +"\nd.- Salir" 
                );
+        if (!hacer.equals("a") && !hacer.equals("b") && !hacer.equals("c") && !hacer.equals("d"))
+        throw new VacioException();
+        correcto=true;
+        
+        
+            
+        }
+        catch (VacioException e){
+        JOptionPane.showMessageDialog(null, "Introduce un valor valido");
+        correcto = false;
+        
         }
         catch(NullPointerException e)
             {
@@ -38,9 +50,10 @@ public class P3e8 {
             }
             catch(Exception e)
             {
-                JOptionPane.showMessageDialog(null,"Problemas");
+                JOptionPane.showMessageDialog(null,"Algo ha fallado");
                 correcto = false;
             }
+        }while(!correcto);
        switch(hacer) {
            case "a":calcularedad();
                    break;
@@ -77,8 +90,13 @@ public class P3e8 {
             correcto=true;
               date1 =  LocalDate.of(ano,mes,dia);
             }
+            catch(DateTimeException e){
+            JOptionPane.showMessageDialog(null, "Introduce una fecha valida");
+            correcto= false;
+            }
             catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Solo puedes introducir números");
+            correcto= false;
             }
             }while(!correcto);
             if(date1.getMonthValue()<=hoy.getMonthValue() && date1.getDayOfMonth()<=hoy.getDayOfMonth() ){
@@ -102,7 +120,11 @@ public class P3e8 {
     }
 
     private static void cadenacaracteres() {
+        boolean correcto= false;
+
         String frase = JOptionPane.showInputDialog("Introduce una frase:");
+        
+
         int vocales =0 ;
         for (int x = 0; x < frase.length(); x++) switch (frase.charAt(x))
             {
