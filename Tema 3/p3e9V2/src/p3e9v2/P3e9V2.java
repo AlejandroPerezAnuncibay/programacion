@@ -41,26 +41,42 @@ public class P3e9V2 {
                 try{
                     while(cont.equalsIgnoreCase("si")){
                         
-         cantprod = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos son?"));
-            precio = Integer.parseInt(JOptionPane.showInputDialog("¿Cuanto vale la unidad?"));
-            
-            iva = Integer.parseInt(JOptionPane.showInputDialog("¿Cuanto iva contiene?"
-                    + "\n 1: 4%"
-                    + "\n 2: 10%"
-                    + "\n 3: 21%"));
-            correcto=true;
-            todo = todo+cantprod+" X "+precio+" = "+cantprod*precio+"\n";
-            totalsiniva= cantprod*precio;
-            formarfactura();
-            ivatotal= ivatotal+niva;
-            cont = JOptionPane.showInputDialog("¿Quiere introducir otro producto?");
-            
-                    }
-                    todo = todo+"TOTAL SIN IVA "+ totalsiniva+resto+"\nTOTAL IVA = "+ivatotal+"\n TOTAL CON IVA = "+(ivatotal+totalsiniva);
+                            cantprod = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos son?"));
+                               precio = Integer.parseInt(JOptionPane.showInputDialog("¿Cuanto vale la unidad?"));
+
+                               iva = Integer.parseInt(JOptionPane.showInputDialog("¿Cuanto iva contiene?"
+                                       + "\n 1: 4%"
+                                       + "\n 2: 10%"
+                                       + "\n 3: 21%"));
+                               correcto=true;
+                               todo = todo+cantprod+" X "+precio+" = "+cantprod*precio+"\n";
+                               totalsiniva= cantprod*precio;
+                               formarfactura();
+                               ivatotal= ivatotal+niva;
+           
+                                cont = JOptionPane.showInputDialog("¿Quiere introducir otro producto?");
+                                if (!cont.equalsIgnoreCase("si") && !cont.equalsIgnoreCase("no"))
+                                {
+                                         throw new SiNoException();
+                                }
+
+
+
+
+
+                                todo = todo+"TOTAL SIN IVA "+ totalsiniva+resto+"\nTOTAL IVA = "+ivatotal+"\nTOTAL CON IVA = "+(ivatotal+totalsiniva);
                 }
-                catch(NumberFormatException e){
-                JOptionPane.showMessageDialog(null, "Introduce un número");
+                    
                 }
+                catch(SiNoException e){
+                JOptionPane.showMessageDialog(null, "Pon si o no");
+                correcto = false;
+                }
+//                catch(NumberFormatException e){
+//                JOptionPane.showMessageDialog(null, "Introduce un número");
+//                correcto = false;
+//                } 
+                
             
         }while (!correcto);
     }
