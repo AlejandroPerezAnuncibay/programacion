@@ -68,14 +68,14 @@ public class P3e9V2 {
                 }
                     
                 }
-                catch(SiNoException e){
-                JOptionPane.showMessageDialog(null, "Pon si o no");
-                correcto = false;
-                }
-//                catch(NumberFormatException e){
-//                JOptionPane.showMessageDialog(null, "Introduce un número");
+//                catch(SiNoException e){
+//                JOptionPane.showMessageDialog(null, "Pon si o no");
 //                correcto = false;
-//                } 
+//                }
+                catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "Introduce un número");
+                correcto = false;
+                } 
                 
             
         }while (!correcto);
