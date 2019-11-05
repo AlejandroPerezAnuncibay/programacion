@@ -27,7 +27,7 @@ public class T4p1 {
       
       }
       Arrays.sort(numeros);
-      JOptionPane.showMessageDialog(null, "El menor es: "+numeros[0]+" y el mayor: "+numeros[9]);
+      JOptionPane.showMessageDialog(null, "El menor es: "+numeros[0]+" y el mayor: "+ numeros[numeros.length - 1]);
     }
     
 }
