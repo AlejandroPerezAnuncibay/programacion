@@ -35,9 +35,14 @@ public class T4p4 {
          String mesp = JOptionPane.showInputDialog(null, "Introduce un mes para validarlo: ");
         
         for (String i : mes){
+          
            
             if(i.equalsIgnoreCase(mesp))
+            {
                 JOptionPane.showMessageDialog(null, "El mes es correcto");
+                System.exit(0);
+            }
+            
             
             
         }
@@ -45,3 +50,4 @@ public class T4p4 {
     }
     
 }
+

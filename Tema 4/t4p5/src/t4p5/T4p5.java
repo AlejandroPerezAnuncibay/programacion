@@ -19,7 +19,7 @@ public class T4p5 {
     public static void main(String[] args) {
         // TODO code application logic here
       String cont="si";
-      String mostrar = "Cantidad caida en cada mes";
+     
      int nmes;
      
       int agua[] = new int [12];
@@ -27,8 +27,8 @@ public class T4p5 {
         
        do{
           
-           nmes = Integer.parseInt(JOptionPane.showInputDialog("Introduce el mes teniendo en cuenta que se empieza de 0"));
-           agua[nmes] += Integer.parseInt(JOptionPane.showInputDialog("Introduce la cantidad de agua caida: "));
+           nmes = Integer.parseInt(JOptionPane.showInputDialog("Introduce el mes "));
+           agua[nmes-1] += Integer.parseInt(JOptionPane.showInputDialog("Introduce la cantidad de agua caida: "));
            cont = JOptionPane.showInputDialog("¿quieres continuar?");
        }while(cont.equalsIgnoreCase("si"));
        JOptionPane.showMessageDialog(null, 
@@ -37,13 +37,13 @@ public class T4p5 {
        "Marzo: "+agua[2]+"\n"+
        "Abril: "+agua[3]+"\n"+
        "Mayo: "+agua[4]+"\n"+
-        "Junio: "+agua[5]+"\n"+
-        "Julio: "+agua[6]+"\n"+
-        "Agosto: "+agua[7]+"\n"+
-        "Septiembre: "+agua[8]+"\n"+
-        "Octubre: "+agua[9]+"\n"+
-        "Noviembre: "+agua[10]+"\n"+
-               "Diciembre: "+agua[11]+"\n");
+       "Junio: "+agua[5]+"\n"+
+       "Julio: "+agua[6]+"\n"+
+       "Agosto: "+agua[7]+"\n"+
+       "Septiembre: "+agua[8]+"\n"+
+       "Octubre: "+agua[9]+"\n"+
+       "Noviembre: "+agua[10]+"\n"+
+       "Diciembre: "+agua[11]+"\n");
     }
     
 }

@@ -19,6 +19,7 @@ public class T4p6 {
     public static void main(String[] args) {
         // TODO code application logic here
         char[] alfabeto = new char[26];  
+        String total = "";
        alfabeto[0]='A';
        alfabeto[1]='B';
        alfabeto[2]='C';
@@ -80,11 +81,11 @@ public class T4p6 {
        
        
        
-       String frase = JOptionPane.showInputDialog("Introduce la frase");
+       String frase = JOptionPane.showInputDialog("Introduce la frase").toUpperCase();
         for(int x = 0; x < alfabeto.length; x++){
                 for(int i = 0; i < frase.length(); i++){
                 if (frase.charAt(i) == alfabeto[x])
-                pos[x] += pos[x]+1;
+                pos[x] += 1;
                 
             }
             
@@ -92,10 +93,12 @@ public class T4p6 {
                     
                     
                     
-                   
-            
-        }JOptionPane.showMessageDialog(null, 
-                    "Hay "+ pos[0]+alfabeto[0] );
+             total +=  "Hay "+ pos[x]+" "+alfabeto[x]+"\n"; 
+
+                                
+        }
+        JOptionPane.showMessageDialog(null, total);
+        
     }
     
 }
