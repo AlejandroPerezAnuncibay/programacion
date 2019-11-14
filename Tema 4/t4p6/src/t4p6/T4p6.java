@@ -97,7 +97,7 @@ public class T4p6 {
 
                                 
         }
-//        JOptionPane.showMessageDialog(null, total);
+     JOptionPane.showMessageDialog(null, total);
         
     }
     

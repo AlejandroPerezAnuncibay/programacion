@@ -86,7 +86,7 @@ public class T4p7 {
     
     }while(vueltas != 0);
         for (int i = 0; i < 15; i++) {
-           devolver +=  "Billetes de "+ cambio[0][i]+" son "+cambio[1][i]+"\n";
+           devolver +=  "Los cambios son "+ cambio[0][i]+" son "+cambio[1][i]+"\n";
         }
         JOptionPane.showMessageDialog(null, devolver);
         
