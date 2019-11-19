@@ -50,8 +50,13 @@ public class T4p8 {
          }while(cont.equalsIgnoreCase("si") && a<codi.length);
          
 //                 falta salida de datos
+       
         for (int i = 0; i < codi.length; i++) {
-            todo += "El alumno "+codi[i]+"ha faltado "+asis[i][i]+"\n";
+            for (int e = 0; e < asis.length; e++) {
+                if(asis[e][i] != 0)
+                 todo += "El alumno "+codi[i]+" ha faltado el dia "+e+": "+asis[e][i]+" horas"+"\n";
+            }
+           
             
         }
         JOptionPane.showMessageDialog(null,todo);
