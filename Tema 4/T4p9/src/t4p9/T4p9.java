@@ -67,6 +67,7 @@ public class T4p9 {
             }
         }
               for (int a = cod.length-1; a > 0; a--) {
+                  if(uv[a]!=0)
                   jauja += "El articulo "+cod[a]+" ha vendido "+uv[a]+"\n";
                 
             }
