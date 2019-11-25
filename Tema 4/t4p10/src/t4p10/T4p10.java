@@ -39,6 +39,7 @@ public class T4p10 {
 
     private static void menu() {
         int op;
+        
         do{
         op = Integer.parseInt(JOptionPane.showInputDialog("¿Que operación quieres realizar sobre la tabla anterior?\n0.Introducción de datos(obligatorio para proceder)\n1.Suma de una fila a elegir\n2.Suma de una columna a elegir\n3.Suma de la diagonal principal\n4.Suma de la diagonal inversa\n5.Media de todos los valores introducidos\n6.Salir"));
         
