@@ -16,11 +16,11 @@ public class T6p2e3 {
      * @param args the command line arguments
      */
  
-    private static ArrayList<Empleado> listaEmpleados1 = new ArrayList();
-    private static ArrayList<Empleado> listaEmpleados2 = new ArrayList();
-    private static ArrayList<Cliente> listaClientes1 = new ArrayList();
-    private static ArrayList<Cliente> listaClientes2 = new ArrayList();
-        
+     static ArrayList<Empleado> listaEmpleados1 = new ArrayList();
+     static ArrayList<Empleado> listaEmpleados2 = new ArrayList();
+     static ArrayList<Cliente> listaClientes1 = new ArrayList();
+     static ArrayList<Cliente> listaClientes2 = new ArrayList();
+     static ArrayList<Empresa> listaEmpresas = new ArrayList();
     public static void main(String[] args) {
         // TODO code application logic here
         
@@ -70,7 +70,7 @@ public class T6p2e3 {
    listaClientes2.add(c5);
     }
    private static void crearEmpresas() {
-        ArrayList<Empresa> listaEmpresas = new ArrayList();
+       
         Empresa e1 = new Empresa("Egibide");
         Empresa e2 = new Empresa("Michelin");
         e1.setListaClientes(listaClientes1);
