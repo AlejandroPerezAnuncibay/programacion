@@ -12,12 +12,20 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="acontecimientosActionPerformed"/>
           </Events>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="a&#xf1;adir">
               <Properties>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir evento"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="eliminar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Eliminar evento"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -100,6 +108,11 @@
           <Font name="Tahoma" size="18" style="2"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Empresa de eventos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton3"/>
       </Properties>
     </Component>
   </SubComponents>

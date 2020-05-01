@@ -167,6 +167,11 @@ public class acontecimientos extends javax.swing.JFrame {
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
         // TODO add your handling code here:
         PracticaEventos.meterDatos(aNombre.getText(), aCombo.getSelectedItem(),aFecha.getText(), aHoraIni.getText(), aHoraFin.getText(),Integer.parseInt(aAforo.getText()));
+        aNombre.setText("");
+        aFecha.setText("");
+        aHoraIni.setText("");
+        aHoraFin.setText("");
+        aAforo.setText("");
     }//GEN-LAST:event_AceptarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

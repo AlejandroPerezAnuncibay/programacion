@@ -32,9 +32,11 @@ public class Empresa extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         acontecimientos = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        añadir = new javax.swing.JMenuItem();
+        eliminar = new javax.swing.JMenuItem();
         salir = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -47,6 +49,8 @@ public class Empresa extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel1.setText("Empresa de eventos");
 
+        jButton3.setText("jButton3");
+
         acontecimientos.setText("Acontecimientos");
         acontecimientos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,13 +58,21 @@ public class Empresa extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem2.setText("Añadir evento");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        añadir.setText("Añadir evento");
+        añadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                añadirActionPerformed(evt);
             }
         });
-        acontecimientos.add(jMenuItem2);
+        acontecimientos.add(añadir);
+
+        eliminar.setText("Eliminar evento");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
+        acontecimientos.add(eliminar);
 
         jMenuBar1.add(acontecimientos);
 
@@ -118,9 +130,14 @@ public class Empresa extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void añadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirActionPerformed
         PracticaEventos.mostrarAcontecimientos();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_añadirActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        // TODO add your handling code here:
+        PracticaEventos.ventanaEliminar();
+    }//GEN-LAST:event_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,12 +176,14 @@ public class Empresa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu acontecimientos;
+    private javax.swing.JMenuItem añadir;
+    private javax.swing.JMenuItem eliminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu salir;
     // End of variables declaration//GEN-END:variables
 

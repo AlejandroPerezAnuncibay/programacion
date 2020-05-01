@@ -60,24 +60,38 @@ public class TablaEventos {
            return null;
     }
 
-    public ArrayList buscarTodo(ArrayList<Persona> listaPersonas) throws Exception {
+    
+    
+*/
+
+    public ArrayList buscarTodo(ArrayList<eventos> listaEventos) throws Exception {
         
-        String plantilla = "select * from personas;";
+     String plantilla = "select * from eventos;";
         PreparedStatement ps = con.prepareStatement(plantilla);
         ResultSet resultado = ps.executeQuery();
      
        while(resultado.next())
        {
-                Persona p = new Persona();
+                eventos e = new eventos();
                
-                p.setNombre(resultado.getString("nombre"));
-                p.setEdad(Integer.parseInt(resultado.getString("edad")));
-                p.setProfesion(resultado.getString("profesion"));
-                p.setNumTel(resultado.getString("telefono"));
+                e.setNombre(resultado.getString("nombre"));
+                e.setLugar(resultado.getString("lugar"));
+                e.setFecha(resultado.getString("fecha"));
+                e.setHoraini(resultado.getString("horaini"));
+                e.setHorafin(resultado.getString("horafin"));
+                e.setMaxPersonas(Integer.parseInt(resultado.getString("aforo")));
                 
-                listaPersonas.add(p);
+                listaEventos.add(e);
        }
-       return listaPersonas;
+       return listaEventos;
     }
-*/
+
+    public Boolean eliminarEvento(String evenele) throws Exception {
+        String query = "delete from eventos where nombre = ?";
+      PreparedStatement preparedStmt = con.prepareStatement(query);
+      preparedStmt.setString(1, evenele);
+      // execute the preparedstatement
+      preparedStmt.execute();
+      return true;
+     }
 }
