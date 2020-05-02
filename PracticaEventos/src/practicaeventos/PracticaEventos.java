@@ -25,6 +25,7 @@ public class PracticaEventos {
     private static eliminarEvento eev;
     private static TablaEventos te;
     private static eventos e;
+    private static modificarEvento em;
     private static Empresa ev;
     private static acontecimientos ac;
     private static boolean prueba;
@@ -39,14 +40,18 @@ public class PracticaEventos {
 
     public static void mostrarAcontecimientos() {
      ac = new acontecimientos();
-     ev.setVisible(false);
      ac.setVisible(true);
+     ev.setVisible(false);
+     eev.setVisible(false);
+     em.setVisible(false);
+     
     }
 
     public static void mostrarEmpresa() {
      ev.setVisible(true);
      eev.setVisible(false);
-     ac.setVisible(true);
+     em.setVisible(false);
+     ac.setVisible(false);
      }
 
     public static void meterDatos(String nombre, Object selectedItem, String fecha, String horaini, String horafin, int aforo) {
@@ -66,6 +71,8 @@ public class PracticaEventos {
         eev = new eliminarEvento();
         eev.setVisible(true);
         ev.setVisible(false);
+        em.setVisible(false);
+        ac.setVisible(false);
       
         
         
@@ -98,6 +105,37 @@ public class PracticaEventos {
       
     
         
+    }
+
+    public static void mostrarModificar() {
+        em = new modificarEvento();
+        em.setVisible(true);
+        eev.setVisible(false);
+        ev.setVisible(false);
+        ac.setVisible(false);
+    }
+
+    public static void acontecimientosCambio(Object eventoamodi) {
+        ac = new acontecimientos();
+        ac.setVisible(true);
+     
+        for (int i = 0; i < listaEventos.size(); i++) {
+            if(String.valueOf(eventoamodi).equalsIgnoreCase(listaEventos.get(i).getNombre()))
+            e = listaEventos.get(i);  
+        }
+        ac.modificar(e.getNombre(),e.getLugar(),e.getFecha(),e.getHoraini(),e.getHorafin(),e.getMaxPersonas());
+        
+    }
+
+    public static void modificarDatos(String nombre, Object selectedItem, String fecha, String horaini, String horafin, int aforo) {
+        try
+        {
+    e = new eventos(nombre, selectedItem.toString(),fecha,horaini,horafin,aforo);
+    te.Actualizar(e);
+    }catch(Exception e){
+        JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        JOptionPane.showMessageDialog(null,"Evento modificado");
     }
     
     

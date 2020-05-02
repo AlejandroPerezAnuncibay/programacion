@@ -37,6 +37,7 @@ public class Empresa extends javax.swing.JFrame {
         acontecimientos = new javax.swing.JMenu();
         añadir = new javax.swing.JMenuItem();
         eliminar = new javax.swing.JMenuItem();
+        modificar = new javax.swing.JMenuItem();
         salir = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -73,6 +74,14 @@ public class Empresa extends javax.swing.JFrame {
             }
         });
         acontecimientos.add(eliminar);
+
+        modificar.setText("Modificar evento");
+        modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarActionPerformed(evt);
+            }
+        });
+        acontecimientos.add(modificar);
 
         jMenuBar1.add(acontecimientos);
 
@@ -139,6 +148,13 @@ public class Empresa extends javax.swing.JFrame {
         PracticaEventos.ventanaEliminar();
     }//GEN-LAST:event_eliminarActionPerformed
 
+    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
+        // TODO add your handling code here:
+        PracticaEventos.mostrarModificar();
+        
+        
+    }//GEN-LAST:event_modificarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -184,6 +200,7 @@ public class Empresa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem modificar;
     private javax.swing.JMenu salir;
     // End of variables declaration//GEN-END:variables
 

@@ -94,4 +94,23 @@ public class TablaEventos {
       preparedStmt.execute();
       return true;
      }
+
+    public void Actualizar(eventos e) throws Exception{
+       String plantilla = "update  eventos set nombre = ?, lugar = ?, fecha = ?, horaini = ?, horafin = ?, aforo = ? where nombre = ?";
+    
+        PreparedStatement ps = con.prepareStatement(plantilla);
+        ps.setString(1, e.getNombre());
+        ps.setString(2,e.getLugar());
+        ps.setString(3,e.getHoraini());
+        ps.setString(4,e.getHorafin());
+        ps.setString(5, e.getFecha());
+        ps.setInt(6,e.getMaxPersonas());
+        ps.setString(7, e.getNombre());
+                  
+         int n = ps.executeUpdate();
+        ps.close();
+        if (n != 1)
+            throw new Exception("El número de filas actualizadas no es uno");
+    }
+    }
 }

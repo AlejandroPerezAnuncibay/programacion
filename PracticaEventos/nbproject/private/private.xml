@@ -5,10 +5,12 @@
         <group>
             <file>file:/C:/Users/Alejandro/Documents/NetBeansProjects/PracticaEventos/src/practicaeventos/PracticaEventos.java</file>
             <file>file:/C:/Users/Alejandro/Documents/NetBeansProjects/PracticaEventos/src/Modelo/BBDD.java</file>
+            <file>file:/C:/Users/Alejandro/Documents/NetBeansProjects/PracticaEventos/src/Vista/eliminarEvento.java</file>
             <file>file:/C:/Users/Alejandro/Documents/NetBeansProjects/PracticaEventos/src/Modelo/eventos.java</file>
             <file>file:/C:/Users/Alejandro/Documents/NetBeansProjects/PracticaEventos/src/Modelo/TablaEventos.java</file>
             <file>file:/C:/Users/Alejandro/Documents/NetBeansProjects/PracticaEventos/src/Vista/Empresa.java</file>
             <file>file:/C:/Users/Alejandro/Documents/NetBeansProjects/PracticaEventos/src/Vista/acontecimientos.java</file>
+            <file>file:/C:/Users/Alejandro/Documents/NetBeansProjects/PracticaEventos/src/Vista/modificarEvento.java</file>
         </group>
     </open-files>
 </project-private>

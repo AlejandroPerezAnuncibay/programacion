@@ -13,10 +13,24 @@ import practicaeventos.PracticaEventos;
  */
 public class acontecimientos extends javax.swing.JFrame {
 
+    public  void modificar(String nombre, String lugar, String fecha, String horaini, String horafin, int maxPersonas) {
+        
+        aNombre.setText(nombre);
+        aFecha.setText(fecha);
+        aHoraIni.setText(horaini);
+        aHoraFin.setText(horafin);
+        aAforo.setText(String.valueOf(maxPersonas));
+        Aceptar.disable();
+        Modificar.enable();
+    }
+
+    
+
     /**
      * Creates new form acontecimientos
      */
     public acontecimientos() {
+     
         initComponents();
     }
 
@@ -29,7 +43,7 @@ public class acontecimientos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -43,12 +57,13 @@ public class acontecimientos extends javax.swing.JFrame {
         aAforo = new javax.swing.JTextField();
         aCombo = new javax.swing.JComboBox<>();
         Aceptar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
+        Modificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
-        jLabel1.setText("Añadir acontecimiento");
+        titulo.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        titulo.setText("Añadir acontecimiento");
 
         jLabel2.setText("Nombre:");
 
@@ -71,10 +86,17 @@ public class acontecimientos extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        salir.setText("Salir");
+        salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                salirActionPerformed(evt);
+            }
+        });
+
+        Modificar.setText("Modificar");
+        Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarActionPerformed(evt);
             }
         });
 
@@ -84,7 +106,7 @@ public class acontecimientos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69))
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
@@ -120,10 +142,12 @@ public class acontecimientos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(aHoraFin, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(23, 23, 23)
+                        .addComponent(Modificar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Aceptar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(salir)
                         .addGap(91, 91, 91)))
                 .addContainerGap())
         );
@@ -131,7 +155,7 @@ public class acontecimientos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(titulo)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -157,7 +181,8 @@ public class acontecimientos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Aceptar)
-                    .addComponent(jButton1))
+                    .addComponent(salir)
+                    .addComponent(Modificar))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -174,9 +199,15 @@ public class acontecimientos extends javax.swing.JFrame {
         aAforo.setText("");
     }//GEN-LAST:event_AceptarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
        PracticaEventos.mostrarEmpresa();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_salirActionPerformed
+
+    private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
+        // TODO add your handling code here:
+        PracticaEventos.modificarDatos(aNombre.getText(), aCombo.getSelectedItem(),aFecha.getText(), aHoraIni.getText(), aHoraFin.getText(),Integer.parseInt(aAforo.getText()));
+        
+    }//GEN-LAST:event_ModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,19 +246,20 @@ public class acontecimientos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Aceptar;
+    private javax.swing.JButton Modificar;
     private javax.swing.JTextField aAforo;
     private javax.swing.JComboBox<String> aCombo;
     private javax.swing.JTextField aFecha;
     private javax.swing.JTextField aHoraFin;
     private javax.swing.JTextField aHoraIni;
     private javax.swing.JTextField aNombre;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton salir;
+    private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }
