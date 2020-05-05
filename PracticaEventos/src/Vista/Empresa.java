@@ -38,6 +38,7 @@ public class Empresa extends javax.swing.JFrame {
         añadir = new javax.swing.JMenuItem();
         eliminar = new javax.swing.JMenuItem();
         modificar = new javax.swing.JMenuItem();
+        confirmarAsis = new javax.swing.JMenuItem();
         salir = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -82,6 +83,14 @@ public class Empresa extends javax.swing.JFrame {
             }
         });
         acontecimientos.add(modificar);
+
+        confirmarAsis.setText("Confirmar asistencia");
+        confirmarAsis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmarAsisActionPerformed(evt);
+            }
+        });
+        acontecimientos.add(confirmarAsis);
 
         jMenuBar1.add(acontecimientos);
 
@@ -155,6 +164,11 @@ public class Empresa extends javax.swing.JFrame {
         
     }//GEN-LAST:event_modificarActionPerformed
 
+    private void confirmarAsisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarAsisActionPerformed
+        // TODO add your handling code here:
+        PracticaEventos.mostrarConfirmacion();
+    }//GEN-LAST:event_confirmarAsisActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -193,6 +207,7 @@ public class Empresa extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu acontecimientos;
     private javax.swing.JMenuItem añadir;
+    private javax.swing.JMenuItem confirmarAsis;
     private javax.swing.JMenuItem eliminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

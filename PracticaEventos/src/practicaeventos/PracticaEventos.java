@@ -27,6 +27,7 @@ public class PracticaEventos {
     private static eventos e;
     private static modificarEvento em;
     private static Empresa ev;
+    private static confirmarAsistencia ca;
     private static acontecimientos ac;
     private static boolean prueba;
     public static void main(String[] args) {
@@ -41,8 +42,6 @@ public class PracticaEventos {
     public static void mostrarAcontecimientos() {
      ac = new acontecimientos();
      ac.setVisible(true);
-     ev.setVisible(false);
-     eev.setVisible(false);
      em.setVisible(false);
      
     }
@@ -136,6 +135,14 @@ public class PracticaEventos {
         JOptionPane.showMessageDialog(null, e.getMessage());
         }
         JOptionPane.showMessageDialog(null,"Evento modificado");
+    }
+
+    public static void mostrarConfirmacion() {
+    ca = new confirmarAsistencia(); 
+    em.setVisible(false);
+    ca.setVisible(true);
+   
+   
     }
     
     
